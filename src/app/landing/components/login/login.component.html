@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <section class="formSection">
+    <form
+      class="form"
+      #form="ngForm"
+      ngForm
+      (submit)="form.valid && submit(form)"
+    >
+      <app-input
+        placeholder="Email"
+        labelText="Email"
+        type="email"
+        id="email"
+        name="email"
+        [mb]="true"
+        [form]="form"
+        [required]="true"
+      ></app-input>
+
+      <app-input
+        placeholder="Password"
+        labelText="Password"
+        type="password"
+        id="password"
+        name="password"
+        [form]="form"
+        [required]="true"
+      ></app-input>
+    </form>
+
+    <button type="submit">Submit</button>
+  </section>
+</div>

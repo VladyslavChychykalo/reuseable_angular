@@ -1,0 +1,56 @@
+<div class="inputContainer" [ngClass]="{ dmb: mb }">
+  <label class="inputContainer__label" [for]="id" *ngIf="inputLocale.value">
+    {{ labelText }}
+  </label>
+  <input
+    class="inputContainer__input"
+    [ngClass]="{
+      inputNoLength: !inputLocale.value,
+      inputLength: inputLocale.value
+    }"
+    [placeholder]="placeholder"
+    [type]="type"
+    [id]="id"
+    ngModel
+    #inputLocale="ngModel"
+    [name]="name"
+    [required]="required"
+  />
+
+  <!-- <div
+    class="errors"
+    *ngIf="
+      inputLocale.email.length ||
+      (inputLocale.invalid &&
+        (inputLocale.dirty || inputLocale.touched || form.submitted))
+    "
+  >
+    <div class="error" *ngIf="inputLocale.email.length">
+      {{ inputLocale.email }}
+    </div>
+
+    <div *ngIf="inputLocale.errors">
+      <div class="error" *ngIf="inputLocale.errors.required">
+        E-Mail Adresse ist erforderlich
+      </div>
+    </div>
+  </div> -->
+
+  <div
+    class="errors"
+    *ngIf="
+      inputLocale.invalid &&
+      (inputLocale.dirty || inputLocale.touched || form.submitted)
+    "
+  >
+    <!-- <div class="error" *ngIf="inputLocale.email.length">
+      {{ inputLocale.email }}
+    </div> -->
+
+    <div *ngIf="inputLocale.errors">
+      <div class="error" *ngIf="inputLocale.errors.required">
+        Email is require
+      </div>
+    </div>
+  </div>
+</div>

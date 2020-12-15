@@ -1,0 +1,91 @@
+.inputContainer {
+  position: relative;
+
+  &.vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &.half {
+      width: calc(50% - 10px);
+    }
+  }
+
+  &__label {
+    color: #070740;
+    position: absolute;
+    font-size: 10px;
+    font-weight: 400;
+    top: 1px;
+    left: 0;
+    left: 12px;
+    padding-top: 4px;
+    line-height: 15px;
+  }
+
+  &__input {
+    width: 100%;
+    border-radius: 4px;
+    background: #f8f8fa;
+    font-size: 12px;
+    line-height: 28px;
+    color: #070740;
+    font-weight: 500;
+    box-sizing: border-box;
+    height: 45px;
+
+    &:-webkit-autofill:focus {
+      background: #f8f8fa;
+    }
+
+    &::placeholder {
+      color: #909cb6;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    &.error {
+      border-color: #fd563c;
+    }
+  }
+
+  .errors {
+    position: absolute;
+    color: #fd563c;
+    font-size: 10px;
+    bottom: -13px;
+    left: 0px;
+    z-index: 100;
+
+    .error {
+      color: #fd563c;
+    }
+  }
+}
+
+.inputNoLength {
+  padding: 15px 15px 15px 13px;
+  border: 1px solid #d7d7ea;
+}
+
+.inputLength {
+  padding: 25px 15px 15px 10px;
+  border: 1px solid #070740;
+}
+
+.dmb {
+  margin-bottom: 20px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #f8f8fa inset;
+  // transition: background-color 5000s ease-in-out 0s;
+}
