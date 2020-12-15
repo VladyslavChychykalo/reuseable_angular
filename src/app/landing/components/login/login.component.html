@@ -1,11 +1,6 @@
 <div class="wrapper">
   <section class="formSection">
-    <form
-      class="form"
-      #form="ngForm"
-      ngForm
-      (submit)="form.valid && submit(form)"
-    >
+    <form class="form" #form="ngForm" (submit)="form.valid && submit(form)">
       <app-input
         placeholder="Email"
         labelText="Email"
@@ -26,8 +21,7 @@
         [form]="form"
         [required]="true"
       ></app-input>
+      <app-button></app-button>
     </form>
-
-    <button type="submit">Submit</button>
   </section>
 </div>

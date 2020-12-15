@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { SharedModule } from './shared/shared.module';
 
 const routes: Routes = [
   {
@@ -10,7 +11,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    SharedModule,
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

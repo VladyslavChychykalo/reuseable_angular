@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+// import { RegisterFormDirective } from '../../directives/register-form.directive';
 
 @Component({
   selector: 'app-input',

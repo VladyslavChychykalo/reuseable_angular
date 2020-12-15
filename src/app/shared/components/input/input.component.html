@@ -8,6 +8,10 @@
       inputNoLength: !inputLocale.value,
       inputLength: inputLocale.value
     }"
+    [class.error]="
+      inputLocale.invalid &&
+      (inputLocale.dirty || inputLocale.touched || form.submitted)
+    "
     [placeholder]="placeholder"
     [type]="type"
     [id]="id"
@@ -15,7 +19,12 @@
     #inputLocale="ngModel"
     [name]="name"
     [required]="required"
+    appRegisterForm
+    [registerForm]="form"
+    [registerModel]="inputLocale"
   />
+
+  <!-- [registerForm]="form" -->
 
   <!-- <div
     class="errors"
