@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  AfterViewInit,
-  ChangeDetectionStrategy,
-} from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -13,15 +7,10 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginComponent implements OnInit, AfterViewInit {
-  @ViewChild('form') el: NgForm;
+export class LoginComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  ngAfterViewInit(): void {
-    console.log(this.el);
-  }
 
   public submit(form: NgForm) {
     console.log(form.value);
