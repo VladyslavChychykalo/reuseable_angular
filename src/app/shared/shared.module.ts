@@ -7,6 +7,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { MainHeaderComponent } from './components/main-header/main-header.component';
 import { RegisterFormDirective } from './directives/register-form.directive';
 import { ButtonComponent } from './components/button/button.component';
+import { AdvertisingModalComponent } from './components/advertising-modal/advertising-modal.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +16,15 @@ import { ButtonComponent } from './components/button/button.component';
     MainHeaderComponent,
     RegisterFormDirective,
     ButtonComponent,
+    AdvertisingModalComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule],
-  exports: [FormsModule, MainHeaderComponent, InputComponent, ButtonComponent],
+  exports: [
+    FormsModule,
+    ModalComponent,
+    MainHeaderComponent,
+    InputComponent,
+    ButtonComponent,
+  ],
 })
 export class SharedModule {}
